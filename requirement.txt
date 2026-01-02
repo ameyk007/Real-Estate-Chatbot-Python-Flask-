@@ -1,0 +1,41 @@
+Project Structure
+real_estate_chatbot/
+│
+├── app.py
+├── database.db
+├── requirements.txt
+└── templates/
+    └── index.html
+
+_____________________________________________________________________________________________________________
+
+Database Setup (SQLite)
+Run once: 
+
+import sqlite3
+
+conn = sqlite3.connect("database.db")
+cursor = conn.cursor()
+
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS inquiries (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_message TEXT,
+    bot_reply TEXT
+)
+""")
+
+conn.commit()
+conn.close()
+
+_____________________________________________________________________________________________________________
+
+How to Run the Project
+1️⃣ Install Dependencies
+pip install flask
+
+2️⃣ Run the Application
+python app.py
+
+3️⃣ Open in Browser
+http://127.0.0.1:5000/
